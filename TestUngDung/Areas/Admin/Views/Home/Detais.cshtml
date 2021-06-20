@@ -1,0 +1,59 @@
+﻿@model ModelEF.Model.san_pham
+
+@{
+    ViewBag.Title = "Detais";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi Tiết</h2>
+<style>
+    dt,dd{
+        margin-bottom: 15px;
+    }
+</style>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd >
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            Đơn vị tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            Đơn giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitCost)
+        </dd>
+        <dt>
+            Loại sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loai_sp.Name)
+        </dd>
+        <dt>
+            Hình
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.HinhSP)*@
+            <img src="~/Areas/Admin/@Model.Image" alt="Alternate Text" width="200" />
+        </dd>
+
+        <p>
+          
+            @Html.ActionLink("Trở lại", "Index")
+        </p>
